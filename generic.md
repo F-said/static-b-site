@@ -1,8 +1,7 @@
 ---
-layout: post
+layout: Cars & Automotive Products
 title: Generic
-description: Lorem ipsum dolor est
-image: assets/images/pic11.jpg
+image: assets/images/robert-laursoo-my6Q5k_WmoI-unsplash.jpg
 nav-menu: true
 ---
 
