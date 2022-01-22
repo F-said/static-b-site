@@ -1,6 +1,6 @@
 ---
-layout: Cars & Automotive Products
-title: Generic
+layout: Generic
+title: Cars & Automotive Products
 image: assets/images/robert-laursoo-my6Q5k_WmoI-unsplash.jpg
 nav-menu: true
 ---

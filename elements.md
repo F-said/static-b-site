@@ -1,5 +1,5 @@
 ---
-layout: Clothing
+layout: Generic
 title: Second Hand Clothing Exporting
 image: assets/images/lucas-hoang-ojZ4wJNUM5w-unsplash.jpg
 nav-menu: true
