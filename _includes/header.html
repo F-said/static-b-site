@@ -1,12 +1,22 @@
 <!-- Wrapper -->
 <div id="wrapper">
 
+<!-- Translator -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+   function googleTranslateElementInit() {
+       new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+   }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <!-- Header -->
 <header id="header"{% if page.layout == "landing" %} class="alt style2"{% endif %}{% if page.layout == "home" %} class="alt"{% endif %}>
 	<a href="{{ "" | absolute_url }}/" class="logo"><strong>{{ site.title }}</strong> <span>{{ site.subtitle }}</span></a>
 	<nav>
 		<a href="#menu">Menu</a>
 	</nav>
+	<a href="#" class="flag_link ru" data-lang="ru"><img class="img-fluid" style="padding-right:10px;" src="assets\images\russia.png" alt="">русский</a>
 </header>
 
 <!-- Menu -->
