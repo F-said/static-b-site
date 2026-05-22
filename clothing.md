@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Second Hand Clothing
+description: Quality second-hand and stock clothing sourced from the United States for global buyers.
 image: assets/images/lucas-hoang-ojZ4wJNUM5w-unsplash.jpg
 nav-menu: true
 ---

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Acquiring Businesses in the U.S.
+description: We help international clients identify, evaluate, and acquire businesses across the United States.
 image: assets/images/photo-1466500419182-8602dc906b51.avif
 nav-menu: true
 ---

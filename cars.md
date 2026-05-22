@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Cars & Automotive Products
+description: New and used vehicles, engine oil, lubricants, boats, and industrial automotive equipment sourced globally.
 image: assets/images/robert-laursoo-my6Q5k_WmoI-unsplash.jpg
 nav-menu: true
 ---
