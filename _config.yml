@@ -1,7 +1,7 @@
 # site settings
 title: GColony LLC
 subtitle:
-email: bakh@wedtrading.com
+email: bakh@gtcolony.com
 description: Over 20 years of experience in international trade.
 baseurl: # the subpath of your site, e.g. /blog
 url: "https://gtcolony.com" # the base hostname & protocol for your site
@@ -9,7 +9,7 @@ author:
 street_address: 
 city: Larchmont
 state: New York
-zip_code: 12180
+zip_code: 10538
 country: United States of America
 phone: +1(917)-653-5504
 
