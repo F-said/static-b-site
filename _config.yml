@@ -6,7 +6,7 @@ description: Over 20 years of experience in international trade.
 baseurl: # the subpath of your site, e.g. /blog
 url: "https://gtcolony.com" # the base hostname & protocol for your site
 author:
-street_address: 
+street_address: 20 Harrison Drive
 city: Larchmont
 state: New York
 zip_code: 10538
