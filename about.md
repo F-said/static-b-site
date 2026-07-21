@@ -31,26 +31,20 @@ The company works with trusted manufacturers, suppliers, and logistics partners 
 
 ---
 
-## Core Business Activities
+## Business Activities
 
-### Automotive Supply
-- Automotive spare parts and accessories
-- Heavy equipment and machinery components
-- Vehicle maintenance materials
-- International automotive sourcing
+Our company specializes in international sourcing, procurement, and supply of industrial products, advanced technologies, and equipment for customers worldwide.
 
-### Industrial Activities
-- Industrial sourcing and procurement
-- Supply coordination for industrial materials and components
-- Support for energy storage and battery-related industrial applications
-- Engineering and industrial project support
-- International procurement and supplier coordination
+Our areas of expertise include:
 
-### International Trade Services
-- Import & export operations
-- Global sourcing solutions
-- Supplier and buyer representation
-- Trade brokerage and logistics coordination
+- Information Technology (IT) and Data Center Infrastructure
+- Enterprise Servers, Storage Systems, AI Computing Platforms and Networking Equipment
+- Industrial Equipment and Machinery
+- Chemicals, Petrochemicals and Specialty Materials
+- Oil & Gas Products and Energy Solutions
+- Medical Equipment and Healthcare Products
+- Telecommunications Equipment
+- International Trade, Procurement and Supply Chain Management
 
 ---
 
