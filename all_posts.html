@@ -22,25 +22,120 @@
     <!-- Wrapper -->
 <div id="wrapper">
 
+<style>
+	/* Hide Google's own widget and banner; we use our own dropdown */
+	#google_translate_element { display: none; }
+	iframe.goog-te-banner-frame, .goog-te-banner-frame.skiptranslate { display: none !important; }
+	body { top: 0 !important; }
+
+	/* Language dropdown */
+	.lang-switcher { position: absolute; right: 8em; top: 0; height: inherit; display: flex; align-items: center; z-index: 10001; }
+	.lang-toggle { background: none; border: 0; box-shadow: none; color: #fff; cursor: pointer; display: flex; align-items: center; gap: .5em; padding: 0 1em; height: auto; line-height: 1; text-transform: none; letter-spacing: normal; }
+	.lang-toggle img, .lang-menu img { width: 20px; height: auto; }
+	.lang-menu { display: none; position: absolute; top: 100%; right: 0; min-width: 10em; margin: 0; padding: .5em 0; list-style: none; background: #242943; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,.3); }
+	.lang-menu.open { display: block; }
+	.lang-menu li { margin: 0; padding: 0; }
+	.lang-menu a { display: flex; align-items: center; gap: .6em; padding: .6em 1em; color: #fff; border: 0; text-decoration: none; }
+	.lang-menu a:hover { background: rgba(255,255,255,.1); }
+</style>
+
 <div id="google_translate_element"></div>
 <script type="text/javascript">
-   function googleTranslateElementInit() {
-       new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-   }
+	function googleTranslateElementInit() {
+		new google.translate.TranslateElement({
+			pageLanguage: 'en',
+			includedLanguages: 'en,es,fr',
+			autoDisplay: false
+		}, 'google_translate_element');
+	}
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 
 <!-- Header -->
 <header id="header">
 	<a href="https://gtcolony.com//" class="logo"><strong>GColony LLC</strong> <span></span></a>
+
+	<!-- Language dropdown -->
+	<div class="lang-switcher notranslate">
+		<button type="button" class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false">
+			<img id="langCurrentFlag" src="/assets/images/united-kingdom.png" alt="">
+			<span id="langCurrentLabel">English</span> ▾
+		</button>
+		<ul class="lang-menu" id="langMenu">
+			<li><a href="#" data-lang="en"><img src="/assets/images/united-kingdom.png" alt=""> English</a></li>
+			<li><a href="#" data-lang="es"><img src="/assets/images/spain.png" alt=""> Spanish</a></li>
+			<li><a href="#" data-lang="fr"><img src="/assets/images/france.png" alt=""> French</a></li>
+		</ul>
+	</div>
+
 	<nav>
 		<a href="#menu">Menu</a>
 	</nav>
-    <a href="#" class="flag_link ru" data-lang="en"><img class="img-fluid" src="assets\images\united-kingdom.png" alt=""> english</a>
-    <a href="#" class="flag_link ru" data-lang="es"><img class="img-fluid" src="assets\images\spain.png" alt=""> spanish</a>
-    <a href="#" class="flag_link ru" data-lang="fr"><img class="img-fluid" src="assets\images\france.png" alt=""> french</a>
 </header>
+
+<script>
+(function () {
+	var toggle = document.getElementById('langToggle');
+	var menu = document.getElementById('langMenu');
+	var labels = { en: 'English', es: 'Spanish', fr: 'French' };
+	var flags = {
+		en: "/assets/images/united-kingdom.png",
+		es: "/assets/images/spain.png",
+		fr: "/assets/images/france.png"
+	};
+
+	function clearTranslateCookie() {
+		var past = 'expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+		document.cookie = 'googtrans=; ' + past;
+		document.cookie = 'googtrans=; ' + past + '; domain=' + location.hostname;
+		document.cookie = 'googtrans=; ' + past + '; domain=.' + location.hostname;
+	}
+
+	function setLanguage(lang) {
+		if (lang === 'en') {
+			clearTranslateCookie();
+			location.reload();
+			return;
+		}
+		var combo = document.querySelector('select.goog-te-combo');
+		if (combo) {
+			combo.value = lang;
+			combo.dispatchEvent(new Event('change'));
+			showCurrent(lang);
+		} else {
+			// Widget not ready: set the cookie and reload
+			document.cookie = 'googtrans=/en/' + lang + '; path=/';
+			location.reload();
+		}
+	}
+
+	function showCurrent(lang) {
+		document.getElementById('langCurrentLabel').textContent = labels[lang] || 'English';
+		document.getElementById('langCurrentFlag').src = flags[lang] || flags.en;
+	}
+
+	// Restore label after a translation is active
+	var match = document.cookie.match(/googtrans=\/en\/([a-z]{2})/);
+	if (match) showCurrent(match[1]);
+
+	toggle.addEventListener('click', function (e) {
+		e.stopPropagation();
+		var open = menu.classList.toggle('open');
+		toggle.setAttribute('aria-expanded', open);
+	});
+
+	menu.addEventListener('click', function (e) {
+		var link = e.target.closest('a[data-lang]');
+		if (!link) return;
+		e.preventDefault();
+		menu.classList.remove('open');
+		setLanguage(link.getAttribute('data-lang'));
+	});
+
+	document.addEventListener('click', function () { menu.classList.remove('open'); });
+})();
+</script>
+
 <!-- Menu -->
 <nav id="menu">
 	<ul class="links">
@@ -119,8 +214,7 @@
 		    
 		
 	</ul>
-</nav>
- 
+</nav> 
     
     
     <!-- Main -->
